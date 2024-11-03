@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip Calculator - Lab 3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div>
+  <header class="title-line">
+    <p>ITMD 541 | Lab 3 | Prasanth A</p>
+  </header>
+
+  <div class="container">
+    <h1>Tip Calculator</h1>
+    <form id="tipForm">
+      <!-- Bill Total Input -->
+      <div class="form-group">
+        <label for="billTotal">Bill Total ($):</label>
+        <input type="text" id="billTotal" name="billTotal" placeholder="Enter bill amount" required>
+      </div>
+
+      <!-- Tip Percentage Slider -->
+      <div class="form-group">
+        <label for="tipPercentage">Tip Percentage:</label>
+        <input 
+          type="range" 
+          id="tipPercentage" 
+          name="tipPercentage" 
+          min="0" 
+          max="100" 
+          step="1" 
+          oninput="updateTipPercentageDisplay()"
+        >
+        <span id="tipPercentDisplay">0%</span>
+      </div>
+
+      <script>
+        function updateTipPercentageDisplay() {
+          const tipPercentage = document.getElementById("tipPercentage").value;
+          document.getElementById("tipPercentDisplay").textContent = tipPercentage + "%";
+        }
+      </script>
+
+      <!-- Tip Amount (Disabled) -->
+      <div class="form-group">
+        <label for="tipAmount">Tip Amount:</label>
+        <input type="text" id="tipAmount" disabled>
+      </div>
+
+      <!-- Total Bill with Tip (Disabled) -->
+      <div class="form-group">
+        <label for="totalWithTip">Total Bill with Tip:</label>
+        <input type="text" id="totalWithTip" disabled>
+      </div>
+
+      <!-- Currency Dropdown (Extra Credit) -->
+      <div class="form-group">
+        <label for="currency">Select Currency:</label>
+        <select id="currency">
+          <option value="USD" selected>USD ($)</option>
+          <option value="INR">INR (₹)</option>
+          <option value="JPY">JPY (¥)</option>
+        </select>
+      </div>
+      <p class="conversion-rates">Conversion Rates: $1 = ₹84.07, ¥149.34</p>
+
+      <!-- Error Message -->
+      <p id="errorMessage" class="error-message"></p>
+    </form>
+  </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
