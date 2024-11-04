@@ -29,8 +29,7 @@
   }
   
   .container {
-    width: 100%;
-    max-width: 400px;
+    width: 500px;
     padding: 30px;
     background-color: #ffffff;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
@@ -98,6 +97,7 @@
   
   .error-message {
     color: #ff4d4d;
+    text-align: center;
     font-size: 0.9em;
     margin-top: -3px;
   }
